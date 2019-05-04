@@ -118,6 +118,43 @@ h1 {
 .score-panel .time {
     padding-left: 50px;
 }
+.modal__background {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.400);
+}
+.modal__body {
+    position: relative;
+    top:50%;
+    left:50%;
+    width:400px;
+    background: #ffffff;
+    transform: translate(-50%,-70%);
+}
+.modal__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 1.5rem;  
+    border-bottom: 1px solid gray;
+}
+.modal__buttons {
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.modal__button {
+    width: 60px;
+    height: 30px;
+}
+.hide {
+    display: none;
+}
+
 /* Media queries for small phone screens */
 
 @media screen and (min-width: 360px) and (max-width:414px) {
@@ -137,6 +174,7 @@ h1 {
     font-size: 10px;
  }
 }
+
 
 /* for tablets and larger screens*/
 

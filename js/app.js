@@ -142,13 +142,16 @@ matcingCard();
 function endGame() {
     var matchedCard = document.querySelectorAll('.match');
     if (matchedCard.length == 16){
-       alert(`You are a winner!! \n you made ${moves} moves \n in ${timer} \n Stars Rating: ${fscore} Stars of 3`);
+       /*alert(`You are a winner!! \n you made ${moves} moves \n in ${timer} \n Stars Rating: ${fscore} Stars of 3`);
        if (confirm('you want play agin?')) {
            setTimeout("location.reload(true);",1000);
         } else {
             alert('click on restart Button to try again ');
             clearInterval(interval);
-        }
+        }*/
+        writeModalContent();
+        toggleModal();
+        
     }
 }
 
@@ -187,6 +190,25 @@ function finalScore(moves) {
        fscore=1;  
     } 
 }
+function toggleModal(){
+    const modal = document.querySelector(".modal__background");
+    modal.classList.toggle('hide');
+    clearInterval(interval);
+}
+function writeModalContent() {
+    const content = document.querySelector("#content");
+    content.innerText =`You are a winner!!\nyou made ${moves} moves\nin ${timer}\nStars Rating: ${fscore} Stars of 3`;
+    clearInterval(interval);
+
+}
+toggleModal();
+toggleModal();
+document.querySelector(".modal__cancel").addEventListener('click',()=>{
+    toggleModal();
+});
+document.querySelector(".modal__replay").addEventListener('click',()=>{
+    setTimeout("location.reload(true);",1000);
+});
 
 restart.addEventListener('click',function() {
     stopTimer();
